@@ -5,6 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\OwnerAccount;
+use App\Models\CustomerAccount;
+use App\Models\Book;
+use App\Models\Place;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -22,6 +25,11 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         OwnerAccount::factory(5)->create();
+        CustomerAccount::factory(5)->create();
+        Place::factory(5)->create();
+        Book::factory(5)->create();
+
+        
      
     }
 
