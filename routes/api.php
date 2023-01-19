@@ -16,9 +16,15 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
+Route::post("customer", [CustomerAccountController::class,'store']);
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('customer', CustomerAccountController::class);
+   // Route::apiResource('customer', CustomerAccountController::class);
+   Route::get("customer", [CustomerAccountController::class,'index']);
+Route::get("customer/{id}", [CustomerAccountController::class,'show']);
+Route::put("customer/{id}", [CustomerAccountController::class,'update']);
+Route::patch("customer/{id}", [CustomerAccountController::class,'update']);
+Route::delete("customer/{id}", [CustomerAccountController::class,'destroy']);
     Route::apiResource('owner', OwnerAccountController::class);
 
     Route::post('customer/logout', [AuthController::class, "logoutCustomerAcc"]);

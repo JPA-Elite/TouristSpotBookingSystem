@@ -55,9 +55,9 @@ class AuthController extends Controller
     }
 
     public function logoutCustomerAcc(Request $request){
-        auth()->user()->tokens()->delete();
+        $request->user()->currentAccessToken()->delete();
     }
     public function logoutOwnerAcc(Request $request){
-        auth()->user()->tokens()->delete();
+        $request->user()->currentAccessToken()->delete();
     }
 }
