@@ -85,15 +85,15 @@ class OwnerAccountController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'name' => 'unique:customer_accounts',
-            'email' => 'email|unique:customer_accounts,email',
+            'name' => 'unique:owner_accounts',
+            'email' => 'email|unique:owner_accounts,email',
 
         ]);
         return OwnerAccount::find($id)->update([
             'name'=> $validated['name'],
             'email'=> $validated['email'],
             'address'=> $request->address,
-            'password'=>$request-> Hash::make($request->password),
+            'password'=>Hash::make($request->password),
 
         ]);
     }

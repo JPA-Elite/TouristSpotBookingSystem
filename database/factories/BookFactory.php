@@ -20,7 +20,7 @@ class BookFactory extends Factory
     {
         return [
             'payment' => $this->faker->randomDigit,
-            'hours' => $this->faker->numberBetween($min = 30, $max = 180),
+            'hours' => $this->faker->numberBetween($min = 1, $max = 48),
             'customer_account_id'  => CustomerAccount::first(),
             'place_id'  => Place::first()
         ];

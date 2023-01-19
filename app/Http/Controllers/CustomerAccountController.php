@@ -91,7 +91,7 @@ class CustomerAccountController extends Controller
             'name'=> $validated['name'],
             'email'=> $validated['email'],
             'address'=> $request->address,
-            'password'=>$request->Hash::make($request->password)
+            'password'=>Hash::make($request->password)
 
         ]);
     }

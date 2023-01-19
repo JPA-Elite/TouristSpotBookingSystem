@@ -30,7 +30,4 @@ class Book extends Model
         return $this->belongsToMany(Place::class)->withPivot('visitors', 'total_payment');
     }
 
-    // public function place(){
-    //     return $this->belongsToMany(Place::class);
-    // }
 }

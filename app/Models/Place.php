@@ -21,34 +21,18 @@ class Place extends Model
         'owner_account_id'
     ];
 
-    // public function owner(){
-    //     return $this->belongsTo(OwnerAccount::class);
-    // }
-
 
     public function owner()
     {
         return $this->belongsTo(OwnerAccount::class, 'owner_account_id', 'id');
     }
 
-    public function customer()
-    {
-       return $this->belongsToMany(Book::class);
-    }
-
-
-
-
-
-    // public function booking(){
-    //     return $this->belo
-    // }
     /**
      * The roles that belong to the Place
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function booking()
+    public function books()
     {
         return $this->belongsToMany(Book::class);
     }
